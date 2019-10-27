@@ -1,8 +1,8 @@
-let Article = require ("./Article.js")
-let Note = require ("./Note.js")
+let article = require ("./article.js")
+let aote = require ("./note.js")
 
 module.exports = {
-    Article,
-    Note
+    article,
+    aote
   };
   
