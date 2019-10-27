@@ -1,6 +1,11 @@
 let axios = require('axios')
 let cheerio = require('cheerio')
 let db = require('../models');
+let mongoose = require("mongoose")
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/articleScrapper";
+
+mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
 
 module.exports = function(app){
 
