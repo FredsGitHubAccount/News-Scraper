@@ -1,7 +1,8 @@
+require('dotenv').config()
 let express = require('express');
 let logger = require('morgan');
 let mongoose = require('mongoose');
-let port =  process.env.port || 6020;
+let PORT =  process.env.PORT || 6020;
 
 
 
@@ -22,6 +23,6 @@ require("./routes/htmlroutes.js")(app);
 require("./routes/apiroutes.js")(app);
 
 
-app.listen(port,function(){
-    console.log(`Listening to http://localhost:${port}`)
+app.listen(PORT,function(){
+    console.log(`Listening to http://localhost:${PORT}`)
 })
