@@ -3,8 +3,7 @@ let cheerio = require('cheerio')
 let db = require("../models/index.js")
 let mongoose = require("mongoose")
 
-console.log(db)
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/articleScrapper";
+let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/articleScrapper";
 
 mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
 
