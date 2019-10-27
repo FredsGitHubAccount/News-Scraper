@@ -1,6 +1,6 @@
 let express = require('express');
 let logger = require('morgan');
-var PORT = process.env.PORT || 6020;
+var PORT = 6020 || process.env.PORT
 
 
 
