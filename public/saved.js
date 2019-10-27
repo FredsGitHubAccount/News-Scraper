@@ -51,6 +51,7 @@ function displayNotes(){
 
     let notesId= $(this).attr("data")
     $("#notes-container").empty();
+    $(window).scrollTop(0);
 
     $.ajax({
         method: "GET",
