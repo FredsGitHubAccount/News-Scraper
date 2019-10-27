@@ -1,5 +1,11 @@
 // Will scrape all of the articles and insert them into the database
 $("#scrape-data").on("click", function () {
+    
+    $("#empty-article-display").empty()
+    let newDiv = $(`<div id="empty-article-display">`)
+    newDiv.html($(`<h2 id="processing-instructions">Give Us A Moment While We Get Your Articles!</h2>`))
+    $("#article-display").html(newDiv)
+
     $.ajax({
         method: "GET",
         url: "/scrape"
@@ -21,16 +27,23 @@ function displayUnsavedArticles() {
         if (data.length) {
             for (let i = 0; i < data.length; i++) {
 
-                let newDiv = $(`<div id="article">`)
-                newDiv.append($(`<h3>Article Title : ${data[i].title}</h3>`))
-                newDiv.append($(`<h4> Article Description : ${data[i].description}</h4>`))
-                newDiv.append($(`<h4> Article Link : <a target="_blank" href="${data[i].link}">${data[i].description}</a></h4>`))
-                newDiv.append($(`<h5><button class="save-article" data="${data[i]._id}">Save Article </button></h5>`))
+                $("#article-display").css("grid-template-columns","1fr 1fr")
+
+                let newDiv = $(`<div class="article-container" id="article">`)
+                
+                newDiv.append($(`<h3>${data[i].title}</h3>`))
+                newDiv.append($(`<h5>${data[i].description}</h4>`))
+                newDiv.append($(`<h5><a target="_blank" href="${data[i].link}">Article Link</a></h4>`))
+                newDiv.append($(`<h5><button class="save-article btn btn-primary" data="${data[i]._id}">Save Article </button></h5>`))
                 $("#article-display").append(newDiv)
             }
         }
         else {
-            $("#article-display").html($(`<h2> Click the get articles button to get articles!</h2>`))
+            
+            let newDiv = $(`<div id="empty-article-display">`)
+            newDiv.append($(`<h2 id="instructions">Please Click The Get Articles Button To Get Articles!</h2>`))
+            $("#article-display").css("grid-template-columns","1fr")
+            $("#article-display").html(newDiv)
         }
 
     })
