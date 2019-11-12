@@ -60,7 +60,7 @@ res.json(err)
 // Gets all of the saved articles
 app.get("/savedarticles",(req,res)=>{
     db.Article.find({saved:true}).then(function(dbArticle){
-        console.log(dbArticle)
+    console.log(dbArticle)
     
     res.json(dbArticle)
     

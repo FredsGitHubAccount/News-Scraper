@@ -9,8 +9,7 @@ function displaySavedArticles() {
         console.log(data)
         if (data.length) {
             for (let i = 0; i < data.length; i++) {
-
-
+                
                 let newDiv = $(`<div class="saved-article-container" data="${data[i]._id}" id="article">`)
                 newDiv.append($(`<h3>${data[i].title}</h3>`))
                 newDiv.append($(`<h5>${data[i].description}</h4>`))

@@ -21,7 +21,7 @@ function displayUnsavedArticles() {
     $.ajax({
         method: "GET",
         url: "/unsavedarticles"
-    }).then(function (data) {
+    }).then(function(data) {
       $("#article-display").empty()
         console.log(data)
         if (data.length) {
