@@ -9,7 +9,7 @@ $("#scrape-data").on("click", function () {
     $.ajax({
         method: "GET",
         url: "/scrape"
-    }).then(function () {
+    }).then(function(){
 
         displayUnsavedArticles()
 
