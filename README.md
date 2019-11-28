@@ -3,12 +3,12 @@ An application where you can gather, save, and post notes to trending NPR News a
 
 ## Table of Contents 
 
-## Live Link
-https://shielded-basin-87137.herokuapp.com/
-
 ## Objective 
 
 I wanted to create an application that allows you to easily access the top trending articles on NPR News, but also, save and post notes to articles.
+
+## Live Link
+https://shielded-basin-87137.herokuapp.com/
 
 ## Screenshot
 ![Screenshot](/ss/newsscrape.png)
